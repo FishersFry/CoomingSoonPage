@@ -11,6 +11,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
@@ -18,16 +19,15 @@ body {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     color: var(--text-color);
     min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
     position: relative;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 /* Ocean Wave Animation */
 .ocean {
-    height: 5%;
+    height: 15vh;
+    min-height: 100px;
     width: 100%;
     position: fixed;
     bottom: 0;
@@ -103,15 +103,22 @@ body {
     padding: 4rem;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-radius: 25px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
     border: 1px solid rgba(255, 255, 255, 0.18);
     max-width: 900px;
     width: 90%;
-    margin: 20px;
+    margin: 20px auto;
     position: relative;
     z-index: 1;
     animation: fadeIn 1.5s ease-out;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    padding: 1rem;
 }
 
 /* Logo and Sparkles */
@@ -527,17 +534,24 @@ input[type="email"]:focus {
     .email-container {
         flex-direction: column;
         align-items: center;
+        width: 100%;
     }
     
     input[type="email"] {
         width: 100%;
+        max-width: 300px;
     }
     
     .container {
-        padding: 2rem;
+        margin: 10px auto;
+        padding: 2rem 1rem;
     }
     
     .feature {
         padding: 1.5rem;
+    }
+    
+    body {
+        padding-bottom: 15vh;
     }
 }

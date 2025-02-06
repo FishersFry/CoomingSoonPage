@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -84,10 +85,22 @@
             <div id="qrModal" class="modal">
                 <div class="modal-content">
                     <span class="close-btn" onclick="toggleQRModal()">&times;</span>
-                    <h3>Menümüzü Görüntüleyin</h3>
-                    <div class="qr-container">
-                        <img id="qrCode" alt="Menu QR Code" class="qr-code">
-                        <p>QR kodu telefonunuzla tarayarak menümüze ulaşabilirsiniz</p>
+                    <div class="menu-tabs">
+                        <button class="tab-btn active" onclick="showTab('qr')">QR Kod</button>
+                        <button class="tab-btn" onclick="showTab('menu')">Menü</button>
+                    </div>
+                    <div id="qrTab" class="tab-content active">
+                        <h3>Menümüzü Görüntüleyin</h3>
+                        <div class="qr-container">
+                            <img id="qrCode" alt="Menu QR Code" class="qr-code">
+                            <p>QR kodu telefonunuzla tarayarak menümüze ulaşabilirsiniz</p>
+                        </div>
+                    </div>
+                    <div id="menuTab" class="tab-content">
+                        <h3>Menümüz</h3>
+                        <div class="menu-container">
+                            <img src="menu.png" alt="Fisher's Fry Menü" class="menu-image">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -99,11 +112,25 @@
                         modal.style.display = 'none';
                     } else {
                         modal.style.display = 'block';
-                        // This will work with GitHub Pages
-                        const baseUrl = 'https://FishersFry.github.io/CoomingSoonPage';
+                        // Using GitHub Pages URL for cleaner link
+                        const baseUrl = 'https://fishersfry.github.io/CoomingSoonPage';
                         const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(baseUrl + '/menu.png')}`;
                         document.getElementById('qrCode').src = qrCodeUrl;
                     }
+                }
+
+                function showTab(tabName) {
+                    // Hide all tabs
+                    document.querySelectorAll('.tab-content').forEach(tab => {
+                        tab.classList.remove('active');
+                    });
+                    document.querySelectorAll('.tab-btn').forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // Show selected tab
+                    document.getElementById(tabName + 'Tab').classList.add('active');
+                    document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
                 }
 
                 // Close modal when clicking outside

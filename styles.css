@@ -556,20 +556,22 @@ input[type="email"]:focus {
     background: rgba(0, 0, 0, 0.8);
     z-index: 1000;
     backdrop-filter: blur(5px);
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .modal-content {
     position: relative;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    margin: 15% auto;
+    margin: 2% auto;
     padding: 2rem;
     width: 90%;
     max-width: 800px;
-    max-height: 90vh;
-    overflow-y: auto;
     border-radius: 15px;
     text-align: center;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
 }
 
 .close-btn {
@@ -655,6 +657,7 @@ input[type="email"]:focus {
 .menu-container {
     max-width: 100%;
     margin-top: 1rem;
+    overflow: hidden;
 }
 
 .menu-image {
@@ -662,6 +665,28 @@ input[type="email"]:focus {
     height: auto;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+/* Chrome-specific fixes */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .modal-content {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+    }
+    
+    .menu-container {
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+    }
+    
+    .menu-image {
+        max-height: 70vh;
+        object-fit: contain;
+    }
 }
 
 /* Responsive Design */

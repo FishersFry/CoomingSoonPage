@@ -1,15 +1,67 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fisher's Fry - Çok Yakında</title>
+    <title>Fisher's Fry - Fish & Chips</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+    <!-- Side Navigation -->
+    <div class="side-nav">
+        <div class="nav-logo">
+            <img src="logo.png" alt="Fisher's Fry Logo" class="nav-logo-img">
+        </div>
+        <nav class="nav-links">
+            <a href="index.html" class="nav-link active has-submenu" id="home-link">
+                <i class="fas fa-home"></i>
+                <span>Ana Sayfa</span>
+            </a>
+            <div class="nav-sublinks" id="home-sublinks">
+                <a href="#menu-section" class="nav-sublink">
+                    <i class="fas fa-utensils"></i>
+                    <span>Menü</span>
+                </a>
+                <a href="#qr-section" class="nav-sublink">
+                    <i class="fas fa-qrcode"></i>
+                    <span>QR Kod</span>
+                </a>
+                <a href="#reviews-section" class="nav-sublink">
+                    <i class="fas fa-star"></i>
+                    <span>Müşteri Yorumları</span>
+                </a>
+            </div>
+            <a href="gallery.html" class="nav-link">
+                <i class="fas fa-images"></i>
+                <span>Galeri</span>
+            </a>
+            <a href="location.html" class="nav-link">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>Konum</span>
+            </a>
+            <a href="tel:05336693379" class="nav-link" onclick="handleNavOrderClick(event)" id="nav-order-link">
+                <i class="fas fa-phone-alt"></i>
+                <span>Sipariş Ver</span>
+            </a>
+            <div id="nav-notification" class="nav-notification">
+                <p>Bu özellik mobil cihazlar içindir. Sipariş vermek için lütfen <strong>0533 669 33 79</strong> numaralı telefonu arayınız.</p>
+            </div>
+        </nav>
+        <div class="nav-social">
+            <a href="https://www.instagram.com/fishersfry" target="_blank" class="nav-social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="nav-social-link"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="nav-social-link"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-nav-toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <!-- Background Animations -->
     <div class="ocean">
         <div class="fries-container">
             <div class="fries fries1"><i class="fas fa-french-fries"></i>🍟</div>
@@ -34,131 +86,451 @@
         <div class="bubble"></div>
         <div class="bubble"></div>
     </div>
-    <div class="container">
-        <div class="content">
+    
+    <!-- Main Content -->
+    <div class="main-container">
+        <header>
             <div class="logo-container">
                 <img src="logo.png" alt="Fisher's Fry Logo" class="logo animate-float">
-                <div class="sparkles">
-                    <i class="fas fa-sparkles"></i>
-                    <i class="fas fa-sparkles"></i>
-                </div>
             </div>
-            <h1 class="glowing-text">Çok Yakında</h1>
-            <p class="tagline">En Lezzetli Fish & Chips Deneyimi</p>
-            <div class="features">
-                <div class="feature" data-aos="fade-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-fish"></i>
-                    </div>
-                    <span>Günlük Üretim</span>
-                    <p class="feature-desc">Her gün taze deniz ürünleri</p>
+            <h1 class="site-title">Fisher's Fry</h1>
+            <p class="site-tagline">Fish & Chips - Balık, patates, midye, karides ve kalamar için tek adres</p>
+        </header>
+        
+        <main>
+            <!-- Menu Display -->
+            <section class="menu-display" id="menu-section">
+                <div class="menu-tabs">
+                    <button class="menu-tab active" data-menu="food">Ana Menü</button>
+                    <button class="menu-tab" data-menu="drinks">İçecekler</button>
                 </div>
-                <div class="feature" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-icon">
-                        <i class="fas fa-star"></i>
-                    </div>
-                    <span>Premium Kalite</span>
-                    <p class="feature-desc">En kaliteli malzemeler</p>
+                <div class="menu-container">
+                    <img src="menu.png" alt="Fisher's Fry Ana Menü" class="menu-image active" id="food-menu">
+                    <img src="drinks-menu.jpg" alt="Fisher's Fry İçecek Menüsü" class="menu-image" id="drinks-menu">
                 </div>
-                <div class="feature" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <span>Özenle Hazırlanır</span>
-                    <p class="feature-desc">Özel tariflerimizle</p>
+            </section>
+            
+            <!-- Call to Action -->
+            <section class="call-to-action">
+                <a href="tel:05336693379" class="action-button" onclick="handleOrderClick(event)">
+                    <i class="fas fa-phone-alt"></i>
+                    Sipariş Ver
+                </a>
+                <div id="pc-notification" class="pc-notification">
+                    <p>Bu özellik mobil cihazlar içindir. Sipariş vermek için lütfen <strong>0533 669 33 79</strong> numaralı telefonu arayınız.</p>
                 </div>
-            </div>
-            <div class="countdown">
-                <div class="countdown-text">2025'te Açılıyoruz</div>
-                <div class="progress-bar">
-                    <div class="progress"></div>
-                </div>
-            </div>
-            <div class="menu-button">
-                <button class="menu-btn" onclick="toggleQRModal()">
-                    <i class="fas fa-utensils"></i>
-                    Menüyü Görüntüle
-                </button>
-            </div>
-
-            <!-- QR Code Modal -->
-            <div id="qrModal" class="modal">
-                <div class="modal-content">
-                    <span class="close-btn" onclick="toggleQRModal()">&times;</span>
-                    <div class="menu-tabs">
-                        <button class="tab-btn active" onclick="showTab('qr')">QR Kod</button>
-                        <button class="tab-btn" onclick="showTab('menu')">Menü</button>
+            </section>
+            
+            <!-- Contact Info -->
+            <section class="contact-info">
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
                     </div>
-                    <div id="qrTab" class="tab-content active">
-                        <h3>Menümüzü Görüntüleyin</h3>
-                        <div class="qr-container">
-                            <img id="qrCode" alt="Menu QR Code" class="qr-code">
-                            <p>QR kodu telefonunuzla tarayarak menümüze ulaşabilirsiniz</p>
+                    <div>
+                        <p>Camiatik mah. Mustafa Kemal Paşa cad. No:28, Urla, Izmir 35430</p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <p><a href="tel:05336693379">0533 669 33 79</a></p>
+                    </div>
+                </div>
+                <div class="info-row">
+                    <div class="info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <p>Her gün: 11:00 - 22:00</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- QR Code -->
+            <section class="qr-section" id="qr-section">
+                <img id="qrCode" alt="Menu QR Code" class="qr-code">
+                <p>Menüyü telefonunuza kaydetmek için QR kodu tarayın</p>
+            </section>
+            
+            <!-- Customer Reviews -->
+            <section class="reviews-section" id="reviews-section">
+                <h2 class="section-title">Müşteri Yorumları</h2>
+                <p class="section-subtitle">Müşterilerimizin Fisher's Fry hakkında söyledikleri</p>
+                
+                <div class="reviews-container">
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Ahmet+Y&background=random" alt="Ahmet Y." class="reviewer-img">
+                            <div class="reviewer-info">
+                                <h3 class="reviewer-name">Ahmet Y.</h3>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
                         </div>
+                        <p class="review-text">"Urla'da keşfettiğim en iyi balık ve patates kızartması! Taze malzemeler ve harika servis. Kesinlikle tekrar geleceğim."</p>
                     </div>
-                    <div id="menuTab" class="tab-content">
-                        <h3>Menümüz</h3>
-                        <div class="menu-container">
-                            <img src="menu.png" alt="Fisher's Fry Menü" class="menu-image">
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Zeynep+K&background=random" alt="Zeynep K." class="reviewer-img">
+                            <div class="reviewer-info">
+                                <h3 class="reviewer-name">Zeynep K.</h3>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                            </div>
                         </div>
+                        <p class="review-text">"Çıtır çıtır kızarmış balık ve altın sarısı patatesler... Sosları da bir harika! Urla'ya her geldiğimde uğruyorum."</p>
+                    </div>
+                    
+                    <div class="review-card">
+                        <div class="review-header">
+                            <img src="https://ui-avatars.com/api/?name=Mehmet+S&background=random" alt="Mehmet S." class="reviewer-img">
+                            <div class="reviewer-info">
+                                <h3 class="reviewer-name">Mehmet S.</h3>
+                                <div class="review-stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="review-text">"Midye tava ve kalamar da denedim, hepsi muhteşemdi. Fiyat-performans açısından bölgedeki en iyi tercih."</p>
                     </div>
                 </div>
-            </div>
-
-            <script>
-                function toggleQRModal() {
-                    const modal = document.getElementById('qrModal');
-                    if (modal.style.display === 'block') {
-                        modal.style.display = 'none';
-                    } else {
-                        modal.style.display = 'block';
-                        // Using GitHub Pages URL for cleaner link
-                        const baseUrl = 'https://fishersfry.github.io/CoomingSoonPage';
-                        const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(baseUrl + '/menu.png')}`;
-                        document.getElementById('qrCode').src = qrCodeUrl;
-                    }
-                }
-
-                function showTab(tabName) {
-                    // Hide all tabs
-                    document.querySelectorAll('.tab-content').forEach(tab => {
-                        tab.classList.remove('active');
-                    });
-                    document.querySelectorAll('.tab-btn').forEach(btn => {
-                        btn.classList.remove('active');
-                    });
-
-                    // Show selected tab
-                    document.getElementById(tabName + 'Tab').classList.add('active');
-                    document.querySelector(`button[onclick="showTab('${tabName}')"]`).classList.add('active');
-                }
-
-                // Close modal when clicking outside
-                window.onclick = function(event) {
-                    const modal = document.getElementById('qrModal');
-                    if (event.target === modal) {
-                        modal.style.display = 'none';
-                    }
-                }
-            </script>
-
-            <div class="newsletter">
-                <h3>Açılışımızdan İlk Sizin Haberiniz Olsun!</h3>
-                <p>Özel açılış indirimleri ve kampanyalardan haberdar olun</p>
-                <div class="email-container">
-                    <input type="email" placeholder="E-posta adresiniz">
-                    <button class="notify-btn">
-                        <span>Beni Bilgilendir</span>
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
+                
+                <div class="reviews-footer">
+                    <a href="https://www.google.com/maps/place/Fisher's+Fry/@38.3221165,26.7677593,17z/data=!3m1!4b1!4m6!3m5!1s0x14bb937d1abe4bc9:0x8772867161e2fa8d!8m2!3d38.3221165!4d26.7677593!16s%2Fg%2F11m6bh7mt6?entry=ttu" target="_blank" class="view-more-btn">
+                        <i class="fab fa-google"></i>
+                        Google'da Tüm Yorumları Görüntüle
+                    </a>
                 </div>
-            </div>
+            </section>
+        </main>
+        
+        <footer>
             <div class="social-links">
                 <a href="https://www.instagram.com/fishersfry" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
+            <p>&copy; 2025 Fisher's Fry. Tüm hakları saklıdır.</p>
+        </footer>
+    </div>
+
+    <!-- Zoom Overlay -->
+    <div class="zoom-overlay" id="zoomOverlay">
+        <div class="zoom-container" id="zoomContainer">
+            <img src="" alt="Zoomed Menu" class="zoom-image" id="zoomImage">
+        </div>
+        <button class="zoom-close" id="zoomClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="zoom-controls">
+            <button class="zoom-btn" id="zoomIn">
+                <i class="fas fa-plus"></i>
+            </button>
+            <button class="zoom-btn" id="zoomOut">
+                <i class="fas fa-minus"></i>
+            </button>
+            <button class="zoom-btn" id="zoomReset">
+                <i class="fas fa-sync-alt"></i>
+            </button>
         </div>
     </div>
+    
+    <script>
+        // Generate QR code on page load
+        window.onload = function() {
+            const baseUrl = 'https://fishersfry.github.io/CoomingSoonPage';
+            const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(baseUrl + '/menu.png')}`;
+            document.getElementById('qrCode').src = qrCodeUrl;
+            
+            // Setup menu tabs
+            setupMenuTabs();
+            
+            // Setup zoom functionality
+            setupZoom();
+            
+            // Setup mobile navigation
+            setupMobileNav();
+            
+            // Setup submenu toggle
+            setupSubmenuToggle();
+        }
+        
+        // Setup submenu toggle functionality
+        function setupSubmenuToggle() {
+            const homeLink = document.getElementById('home-link');
+            const homeSublinks = document.getElementById('home-sublinks');
+            
+            // Alt menüyü açıp kapatan fonksiyon
+            function toggleSubmenu(e) {
+                if (e) e.preventDefault(); // Eğer olay varsa, varsayılan davranışı engelle
+                homeSublinks.classList.toggle('show');
+                homeLink.classList.toggle('active');
+            }
+            
+            // Ana sayfa bağlantısına tıklandığında
+            homeLink.addEventListener('click', function(e) {
+                // Eğer zaten ana sayfadaysak
+                if (window.location.pathname.includes('index.html') || window.location.pathname === '/' || window.location.pathname === '') {
+                    // Eğer alt menü açıksa, kapat
+                    if (homeSublinks.classList.contains('show')) {
+                        toggleSubmenu(e);
+                    } else {
+                        // Eğer alt menü kapalıysa, aç
+                        toggleSubmenu(e);
+                    }
+                } else {
+                    // Eğer başka bir sayfadaysak ve alt menü açıksa, kapat ve ana sayfaya git
+                    if (homeSublinks.classList.contains('show')) {
+                        toggleSubmenu(e);
+                    }
+                    // Eğer alt menü kapalıysa, ana sayfaya git (varsayılan davranış)
+                }
+            });
+            
+            // Alt menüyü açmak için hover olayı
+            homeLink.addEventListener('mouseenter', function() {
+                if (!homeSublinks.classList.contains('show')) {
+                    toggleSubmenu();
+                }
+            });
+            
+            // Alt menüyü kapatmak için mouseleave olayı
+            homeLink.parentNode.addEventListener('mouseleave', function() {
+                if (homeSublinks.classList.contains('show')) {
+                    toggleSubmenu();
+                }
+            });
+        }
+        
+        // Handle order button click
+        function handleOrderClick(event) {
+            // Check if device is not mobile
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                event.preventDefault();
+                const notification = document.getElementById('pc-notification');
+                notification.classList.add('show');
+                
+                // Hide notification after 5 seconds
+                setTimeout(function() {
+                    notification.classList.remove('show');
+                }, 5000);
+            }
+        }
+        
+        // Handle navigation order button click
+        function handleNavOrderClick(event) {
+            // Check if device is not mobile
+            if (!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                event.preventDefault();
+                const notification = document.getElementById('nav-notification');
+                notification.classList.add('show');
+                
+                // Hide notification after 5 seconds
+                setTimeout(function() {
+                    notification.classList.remove('show');
+                }, 5000);
+            }
+        }
+        
+        // Setup menu tabs functionality
+        function setupMenuTabs() {
+            const tabs = document.querySelectorAll('.menu-tab');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    // If already active, don't do anything
+                    if (tab.classList.contains('active')) return;
+                    
+                    // Remove active class from all tabs and menus
+                    document.querySelectorAll('.menu-tab').forEach(t => t.classList.remove('active'));
+                    document.querySelectorAll('.menu-image').forEach(m => m.classList.remove('active'));
+                    
+                    // Add active class to clicked tab
+                    tab.classList.add('active');
+                    
+                    // Show corresponding menu
+                    const menuType = tab.getAttribute('data-menu');
+                    document.getElementById(`${menuType}-menu`).classList.add('active');
+                });
+            });
+        }
+        
+        // Setup mobile navigation
+        function setupMobileNav() {
+            const mobileToggle = document.querySelector('.mobile-nav-toggle');
+            const sideNav = document.querySelector('.side-nav');
+            
+            mobileToggle.addEventListener('click', () => {
+                sideNav.classList.toggle('open');
+                mobileToggle.classList.toggle('open');
+            });
+        }
+        
+        // Setup smooth scrolling for anchor links
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all anchor links that point to sections on the page
+            const anchorLinks = document.querySelectorAll('.nav-sublink[href^="#"]');
+            
+            // Add click event listener to each anchor link
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    // Get the target section
+                    const targetId = this.getAttribute('href');
+                    const targetSection = document.querySelector(targetId);
+                    
+                    if (targetSection) {
+                        // Close mobile menu if open
+                        const sideNav = document.querySelector('.side-nav');
+                        if (sideNav.classList.contains('open')) {
+                            sideNav.classList.remove('open');
+                            document.querySelector('.mobile-nav-toggle').classList.remove('open');
+                        }
+                        
+                        // Scroll to the target section smoothly
+                        window.scrollTo({
+                            top: targetSection.offsetTop - 20,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+        
+        // Setup zoom functionality
+        function setupZoom() {
+            const menuImages = document.querySelectorAll('.menu-image');
+            const zoomOverlay = document.getElementById('zoomOverlay');
+            const zoomImage = document.getElementById('zoomImage');
+            const zoomClose = document.getElementById('zoomClose');
+            const zoomIn = document.getElementById('zoomIn');
+            const zoomOut = document.getElementById('zoomOut');
+            const zoomReset = document.getElementById('zoomReset');
+            const zoomContainer = document.getElementById('zoomContainer');
+            
+            let scale = 1;
+            let panning = false;
+            let pointX = 0;
+            let pointY = 0;
+            let start = { x: 0, y: 0 };
+            
+            // Open zoom overlay when clicking on menu images
+            menuImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    zoomImage.src = img.src;
+                    zoomOverlay.style.display = 'flex';
+                    document.body.style.overflow = 'hidden';
+                    resetZoom();
+                });
+            });
+            
+            // Close zoom overlay
+            zoomClose.addEventListener('click', () => {
+                zoomOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Zoom in button
+            zoomIn.addEventListener('click', () => {
+                scale += 0.2;
+                updateZoom();
+            });
+            
+            // Zoom out button
+            zoomOut.addEventListener('click', () => {
+                scale = Math.max(1, scale - 0.2);
+                updateZoom();
+            });
+            
+            // Reset zoom
+            zoomReset.addEventListener('click', resetZoom);
+            
+            function resetZoom() {
+                scale = 1;
+                pointX = 0;
+                pointY = 0;
+                updateZoom();
+            }
+            
+            function updateZoom() {
+                zoomImage.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+            }
+            
+            // Mouse events for panning
+            zoomContainer.addEventListener('mousedown', (e) => {
+                e.preventDefault();
+                start = { x: e.clientX - pointX, y: e.clientY - pointY };
+                panning = true;
+            });
+            
+            zoomContainer.addEventListener('mousemove', (e) => {
+                if (!panning) return;
+                pointX = e.clientX - start.x;
+                pointY = e.clientY - start.y;
+                updateZoom();
+            });
+            
+            zoomContainer.addEventListener('mouseup', () => {
+                panning = false;
+            });
+            
+            zoomContainer.addEventListener('mouseleave', () => {
+                panning = false;
+            });
+            
+            // Touch events for mobile
+            zoomContainer.addEventListener('touchstart', (e) => {
+                e.preventDefault();
+                start = { x: e.touches[0].clientX - pointX, y: e.touches[0].clientY - pointY };
+                panning = true;
+            });
+            
+            zoomContainer.addEventListener('touchmove', (e) => {
+                if (!panning) return;
+                pointX = e.touches[0].clientX - start.x;
+                pointY = e.touches[0].clientY - start.y;
+                updateZoom();
+            });
+            
+            zoomContainer.addEventListener('touchend', () => {
+                panning = false;
+            });
+            
+            // Close on escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && zoomOverlay.style.display === 'flex') {
+                    zoomOverlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Mouse wheel zoom
+            zoomContainer.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                const delta = e.deltaY > 0 ? -0.1 : 0.1;
+                scale = Math.max(1, scale + delta);
+                updateZoom();
+            });
+        }
+    </script>
 </body>
 </html>

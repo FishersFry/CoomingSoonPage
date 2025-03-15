@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fisher's Fry - Menü</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #1e3c72;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .menu-container {
+            max-width: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        .menu-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #ffd700;
+            color: #1e3c72;
+            text-decoration: none;
+            border-radius: 25px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .back-button:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-container">
+        <img src="menu.png" alt="Fisher's Fry Menü" class="menu-image">
+        <br>
+        <a href="index.html" class="back-button">Ana Sayfaya Dön</a>
+    </div>
+</body>
+</html>

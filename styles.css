@@ -760,11 +760,13 @@ footer p {
 /* Responsive Design */
 @media (max-width: 768px) {
     body {
-        padding-left: 0;
+        padding: 0;
+        overflow-x: hidden;
     }
     
     .side-nav {
         transform: translateX(-100%);
+        z-index: 1000;
     }
     
     .side-nav.open {
@@ -772,16 +774,17 @@ footer p {
     }
     
     .mobile-nav-toggle {
-        display: flex;
+        display: block;
     }
     
     .main-container {
-        padding: 20px;
-        margin: 10px;
+        margin-left: 0;
+        padding: 15px;
+        width: 100%;
     }
     
     .site-title {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     
     .site-tagline {
@@ -789,27 +792,132 @@ footer p {
     }
     
     .menu-image {
-        max-height: 50vh;
-        width: 100%;
+        max-width: 100%;
     }
     
     .action-button {
         width: 100%;
-        justify-content: center;
     }
     
-    body {
-        padding-bottom: 15vh;
+    /* Galeri düzenlemeleri */
+    .gallery-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .gallery-item {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+    
+    .gallery-img {
+        height: auto;
+        max-height: 250px;
+        object-fit: cover;
+    }
+    
+    /* Müşteri yorumları düzenlemeleri */
+    .review-card {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .review-text {
+        font-size: 0.9rem;
+        line-height: 1.4;
+        display: block !important;
+        visibility: visible !important;
+    }
+    
+    /* Menü düzenlemeleri */
+    .menu-display {
+        padding: 10px;
+    }
+    
+    .menu-tabs {
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .menu-tab {
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+    
+    /* QR kod bölümü */
+    .qr-section {
+        padding: 15px;
+    }
+    
+    .qr-code {
+        max-width: 150px;
+    }
+    
+    /* Footer düzenlemeleri */
+    footer {
+        padding: 15px;
+    }
+    
+    /* Lightbox düzenlemeleri */
+    .lightbox-content {
+        max-width: 90%;
+        max-height: 80vh;
+    }
+    
+    .lightbox-prev, .lightbox-next {
+        font-size: 1.5rem;
+        padding: 10px;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-    :root {
-        --nav-width: 200px;
+/* iPhone özel düzenlemeler */
+@media (max-width: 480px) {
+    .site-title {
+        font-size: 1.8rem;
+        margin-top: 10px;
     }
     
-    .nav-link span {
+    .site-tagline {
         font-size: 0.9rem;
+    }
+    
+    .menu-tab {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .gallery-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .filter-btn {
+        margin: 5px;
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .gallery-overlay h3 {
+        font-size: 1rem;
+    }
+    
+    .gallery-overlay p {
+        font-size: 0.8rem;
+    }
+    
+    .review-card {
+        margin-bottom: 10px;
+    }
+    
+    .reviewer-name {
+        font-size: 0.9rem;
+    }
+    
+    .review-text {
+        font-size: 0.8rem;
     }
 }
 
@@ -1375,4 +1483,25 @@ footer p {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.menu-mobile-note {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .menu-mobile-note {
+        display: block;
+    }
+    
+    body {
+        padding: 0;
+        overflow-x: hidden;
+    }
+    
+    /* Diğer mobil stiller devam ediyor */
 }

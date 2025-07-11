@@ -1469,6 +1469,11 @@ footer p {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     margin-bottom: 15px;
+    overflow-y: auto;
+    max-height: 100vh;
+    padding: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-color) transparent;
 }
 
 .gallery-item {
@@ -1479,6 +1484,9 @@ footer p {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 .gallery-item:hover {
@@ -1490,7 +1498,9 @@ footer p {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .gallery-item:hover .gallery-img {
